@@ -39,12 +39,12 @@ public class CapitalizationTest {
 
         // TODO CREATE A NEW LIST OBJECT CALLED "inputs" THAT CONSIST OF ALL BOOKS STATED ABOVE
         List<Book> books = Arrays.asList(importedBook1,importedBook2,importedBook3,importedBook4, localBook1, localBook2, localBook3, localBook4);
-        System.out.println(books);
+
         Map<String, List<String>> expected = new HashMap<String, List<String>>(){{
             put("Jane Stark",Arrays.asList("Local Book 1", "Local Book 2", "Local Book 3", "Local Book 4"));
             put("John Doe", Arrays.asList("Imported Book 1", "Imported Book 2", "Imported Book 3", "Imported Book 4"));
         }};
-
+        System.out.println(Capitalization.convertToMap(books));
         assertEquals(expected, Capitalization.convertToMap(books));
         assertNotNull(Capitalization.convertToMap(books));
     }

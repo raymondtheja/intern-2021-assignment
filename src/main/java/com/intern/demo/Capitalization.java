@@ -24,12 +24,8 @@ public class Capitalization {
         // TODO Add logic to capitalize Author and Title Of Books to Map with Key: Author, Value: List of Title Grouped By Author
         // TODO INPUT: List<Book>
         // TODO OUTPUT: Map<String, List<String>>
-        for (Book book: books) {
-            book.setAuthor(capitalize(book.getAuthor()));
-            book.setTitle(capitalize(book.getTitle()));
-        }
 
-        return books.stream().collect(Collectors.groupingBy(book -> book.getAuthor(),
-                Collectors.mapping(book -> book.getTitle(), Collectors.toList())));
+        return books.stream().collect(Collectors.groupingBy(book -> capitalize(book.getAuthor()),
+                Collectors.mapping(book -> capitalize(book.getTitle()), Collectors.toList())));
     }
 }
