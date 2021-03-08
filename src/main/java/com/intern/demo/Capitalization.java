@@ -30,6 +30,6 @@ public class Capitalization {
         }
 
         return books.stream().collect(Collectors.groupingBy(book -> book.getAuthor(),
-                Collectors.mapping(Book::getTitle, Collectors.toList())));
+                Collectors.mapping(book -> book.getTitle(), Collectors.toList())));
     }
 }

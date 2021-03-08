@@ -9,7 +9,8 @@ public class LocalBook extends Book{
     private String store;
 
     public LocalBook(String author, String title, String store) {
-        super(author, title);
+        this.setAuthor(author);
+        this.setTitle(title);
         this.store = store;
     }
 }
